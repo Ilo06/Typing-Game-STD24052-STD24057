@@ -14,11 +14,9 @@ const wordDisplay = document.getElementById("word-display");
 const inputField = document.getElementById("input-field");
 const results = document.getElementById("results");
 
-const words = {
-    easy: ["apple", "banana", "grape", "orange", "cherry"],
-    medium: ["keyboard", "monitor", "printer", "charger", "battery"],
-    hard: ["synchronize", "complicated", "development", "extravagant", "misconception"]
-};
+import { wordsList } from "./modules/words.js";
+
+const words = wordsList;
 
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
