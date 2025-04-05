@@ -39,7 +39,7 @@ const startTest = (wordCount = 50) => {
     wordsToType.forEach((word, index) => {
         const span = document.createElement("span");
         span.textContent = word + " ";
-        if (index === 0) span.style.color = "red"; // Highlight first word
+        if (index === 0) span.style.color = "#F94449"; // Highlight first word
         wordDisplay.appendChild(span);
     });
 
@@ -86,9 +86,9 @@ const highlightNextWord = () => {
 
     if (currentWordIndex < wordElements.length) {
         if (currentWordIndex > 0) {
-            wordElements[currentWordIndex - 1].style.color = "black";
+            wordElements[currentWordIndex - 1].style.color = "#8BCA84";
         }
-        wordElements[currentWordIndex].style.color = "red";
+        wordElements[currentWordIndex].style.color = "#F94449";
     }
 };
 
