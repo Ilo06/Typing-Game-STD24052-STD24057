@@ -4,7 +4,9 @@
  * La precision, c'est le pourcentage de caractères tapées correctement sur toutes les caractères tapées.
  * 
  * Sur ce... Amusez-vous bien ! 
- */
+*/
+import { wordsList } from "./modules/words.js";
+
 let startTime = null, previousEndTime = null;
 let currentWordIndex = 0;
 const wordsToType = [];
@@ -13,8 +15,6 @@ const modeSelect = document.getElementById("mode");
 const wordDisplay = document.getElementById("word-display");
 const inputField = document.getElementById("input-field");
 const results = document.getElementById("results");
-
-import { wordsList } from "./modules/words.js";
 
 const words = wordsList;
 
@@ -99,6 +99,9 @@ inputField.addEventListener("keydown", (event) => {
     updateWord(event);
 });
 modeSelect.addEventListener("change", () => startTest());
+
+//Start the test when "Enter" key is pressed
+document.addEventListener("keydown", (e) => e.key == "Enter" ? startTest() : true)
 
 // Start the test
 startTest();
