@@ -1,27 +1,51 @@
+<!-- 
+    This page needs to be started with LIVE SERVER or LIVE PREVIEW 
+                             /_-_-_-_-_-_-_-_-_-_-_-_-_-_
+                            /                          /
+                           / * STD24052 - STD24057 *  /
+                          /                          /
+                         _-_-_-_-_-_-_-_-_-_-_-_-_-_/
+-->    
+
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Typing Test</title>
-        <script type="module" src="assets/scripts/script.js" defer></script>
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+    <script type="module" src="assets/scripts/script.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
 <body>
     <header>
         <h1>Typing Test</h1>
-        <label id="mode-select" for="mode">Select Mode:</label>
-        <select id="mode">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
+        <div class="selector">
+            <div class="moder">
+                <label id="mode-select" for="mode">Mode</label>
+                <select id="mode">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="words-number moder">
+                <label id="words-number-select" for="num">Words Number</label>
+                <select id="num">
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
+
     </header>
     <main>
+        <!-- <p id="word-display-cursor"></p> -->
         <p id="word-display"></p>
-        <input type="text" id="input-field" autofocus>
+        <input type="text" id="input-field" autocomplete="off" autofocus>
         <!-- <p id="results">Results : </p> -->
         <div class="stats">
             <div class="block-stat correct-stat">
@@ -30,14 +54,25 @@
             </div>
             <div class="block-stat speed-stat">
                 <h3>WPM</h3>
-                <p>99</p>
+                <p id="wpmStat">99</p>
             </div>
             <div class="block-stat accuracy-stat">
                 <h3>Accuracy</h3>
-                <p>86%</p>
+                <p id="accuracyStat">86%</p>
             </div>
         </div>
-        <button type="button"><i class='bx bx-refresh'></i> Restart</button>
+        <button id="restart-button" type="button">Restart<i class='bx bx-refresh'></i></button>
+        <!-- <div class="average-stats">
+            <div class="avg-accuracy block-stat">
+                <h3>Average Accuracy</h3>
+                <p id="avg-accuracy">86%</p>
+            </div>
+            <div class="avg-wpm block-stat">
+                <h3>Average WPM</h3>
+                <p id="avg-wpm">86%</p>
+            </div>
+        </div> -->
+
     </main>
 
 </body>
