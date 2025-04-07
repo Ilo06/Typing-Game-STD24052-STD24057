@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "0xProto";
+    src: url(../font/0xProtoNerdFont-Regular.ttf);
+}
+
+:root {
+    --primary-color: #374151;
+    --secondary-color: #C6C8CC;
+    --terty-color: #1F2937;
+    --fourth-color: #ECEFF5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.start-up {
+    background-color: #374151;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 50vw;
+    height: 100vh;
+}
+
+.title {
+    padding-top: 150px;
+    width: fit-content;
+    align-self: center;
+}
+
+.title-text {
+    color: var(--secondary-color);
+    width: fit-content;
+    text-align: center;
+}
+
+.title-text-name {
+    font-family: "0xProto";
+    display: inline-block;
+    font-size: 3.5rem;
+    border-right: 5px solid;
+    width: 80%;
+    margin-inline: 10% auto;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s steps(12),
+        cursor .5s step-end infinite alternate;
+}
+
+.title-text-id {
+    font-family: "0xProto";
+    margin-inline: auto;
+    font-size: 1.2rem;
+    border-right: 2px solid;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 600;
+    animation:
+        typing 2.5s steps(19),
+        cursor .5s step-end infinite alternate;
+}
+.title-text-description{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+.start-button {
+    font-family: "0xProto";
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    background-color: var(--terty-color);
+    align-self: center;
+    width: fit-content;
+    padding-block: 15px;
+    padding-inline: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.start-up-images {
+    width: 50vw;
+    height: 100vh;
+    background-color: #ECEFF5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.typewriter-image{
+    width: 550px;
+    z-index: 3;
+    animation: 2s floating infinite;
+}
+.background-image{
+    position: absolute;
+    scale: 1.2;
+}
+@keyframes cursor {
+    50% {
+        border-right: 0px solid;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+@keyframes floating {
+    0%{
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
