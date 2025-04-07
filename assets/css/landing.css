@@ -10,27 +10,44 @@
     --fourth-color: #ECEFF5;
 }
 
+
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    background-color: var(--primary-color);
+}
+
+.disapear{
+    animation: disapear 1s 1 ease-in-out;
+
+}
+@keyframes disapear {
+    from{
+        opacity: 100%;
+    }to{
+        opacity: 0%;
+
+    }
 }
 
 main {
     display: flex;
-    flex-direction: row;
+    transition: all ease 1s;
 }
 
-.start-up {
+#start-up {
     background-color: #374151;
     display: flex;
     flex-direction: column;
     gap: 50px;
     width: 50vw;
     height: 100vh;
+    transition: all ease 1s;
 }
 
 .title {
-    padding-top: 150px;
+    margin-top: 10vh;
     width: fit-content;
     align-self: center;
 }
@@ -51,8 +68,8 @@ main {
     white-space: nowrap;
     overflow: hidden;
     animation:
-        typing 2s steps(12),
-        cursor .5s step-end infinite alternate;
+    typing 2s steps(12),
+    cursor .5s step-end infinite alternate;
 }
 
 .title-text-id {
@@ -65,8 +82,8 @@ main {
     overflow: hidden;
     font-weight: 600;
     animation:
-        typing 2.5s steps(19),
-        cursor .5s step-end infinite alternate;
+    typing 2.5s steps(19),
+    cursor .5s step-end infinite alternate;
 }
 .title-text-description{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -75,7 +92,7 @@ main {
     font-size: 18px;
 }
 
-.start-button {
+#start-button {
     font-family: "0xProto";
     font-weight: 600;
     font-size: 1.2rem;
@@ -89,7 +106,7 @@ main {
     border-radius: 10px;
 }
 
-.start-up-images {
+#start-up-images {
     width: 50vw;
     height: 100vh;
     background-color: #ECEFF5;
@@ -97,9 +114,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all ease 1s;
 }
 .typewriter-image{
-    width: 550px;
+    width: 350px;
     z-index: 3;
     animation: 2s floating infinite;
 }

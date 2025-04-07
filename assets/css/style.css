@@ -15,6 +15,10 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 20px;
 }
+header{
+    animation: appear 0.5s 1 ease-in-out;
+
+}
 
 #word-display {
     color: var(--secondary-color);
@@ -36,6 +40,16 @@ main {
     padding-inline: 20%;
     text-align: center;
     gap: 10px;
+    animation: appear 0.5s 1 ease-in-out;
+}
+
+@keyframes appear {
+    from{
+        opacity: 0%;
+    }to{
+        opacity: 100%;
+
+    }
 }
 
 .stats h3 {
@@ -187,6 +201,7 @@ main {
 .incorrect {
     color: #F94449;
 }
+
 /* 
 #input-field {
     border-radius: 10px;
@@ -273,5 +288,3 @@ main {
         opacity: 1;
     }
 } */
-
-
