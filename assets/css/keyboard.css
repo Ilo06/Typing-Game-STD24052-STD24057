@@ -1,0 +1,73 @@
+:root {
+    --primary-color: #374151;
+    --secondary-color: #C6C8CC;
+    --terty-color: #1F2937;
+
+}
+
+.keyboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: #dee0e5;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+    transition: all ease 0.2s;
+}
+
+.keyboard-button{
+    background-color: var(--primary-color);
+    border-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    width: 35px;
+    transition: all ease 0.2s;
+}
+
+#space{
+    width: 150px;
+    height: 35px;
+    transition: all ease 0.2s;
+    background-color: var(--primary-color);
+    border-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--secondary-color);
+
+}
+
+#keyboard-show{
+    font-size: 16px;
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    border-style: none;
+    background-color: var(--terty-color);
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 26px;
+    left: -5.5rem;
+    margin-top: -3.5rem;
+    transition: all ease 0.2s;
+}
+#keyboard-show:active{
+    width: 45px;
+    height: 45px;
+    scale: 0.9;
+    filter: brightness(0.8);
+    transition: all ease 0.2s;
+}
+

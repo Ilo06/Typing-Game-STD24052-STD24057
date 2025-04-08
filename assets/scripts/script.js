@@ -29,6 +29,9 @@ const words = wordsList;
 //just the restart button
 const restartButton = document.getElementById("restart-button")
 
+//updated word to be displayed on wordDisplay after or while typing it
+let updatedWord = "";
+
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
     const wordList = words[mode];
@@ -61,6 +64,7 @@ const startTest = (wordCount = 30) => {
     inputField.value = "";
     wpmStat.textContent = "0.00";
     accuracyStat.textContent = "0.00%";
+    updatedWord = ""
 };
 
 // Start the timer when user begins typing
@@ -137,10 +141,8 @@ const highlightNextWord = () => {
                 wordElements[currentWordIndex - 1].style.color = "#8BCA84";
 
             } else {
-                // console.log(String(wordElements[currentWordIndex - 1].innerText).trim(), inputField.value)
-                wordElements[currentWordIndex - 1].innerHTML = `${inputField.value.trim()} `
+                // wordElements[currentWordIndex - 1].innerHTML = `${inputField.value.trim()} `
                 wordElements[currentWordIndex].style.color = "#F94449";
-
             }
         }
         wordElements[currentWordIndex].style.color = "#F94449";
@@ -163,25 +165,37 @@ restartButton.addEventListener("click", () => startTest(numberSelect.value))
 // Start the test
 startTest(numberSelect.value);
 
-
+//Change letter color based on how well you write the word
 const changeLetterColor = () => {
     inputField.addEventListener("input", () => {
         const inputValue = inputField.value;
         const currentWord = wordsToType[currentWordIndex];
-        let updatedWord = "";
+        updatedWord = ""
 
         for (let i = 0; i < currentWord.length; i++) {
             if (inputValue[i] === currentWord[i]) {
                 updatedWord += `<span class="correct">${currentWord[i]}</span>`;
             } else if (inputValue[i] !== undefined) {
-                updatedWord += `<span class="incorrect">${currentWord[i]}</span>`;
+                updatedWord += `<span class="incorrect">${inputValue[i]}</span>`;
             } else {
                 updatedWord += `<span>${currentWord[i]}</span>`;
             }
         }
 
-        updatedWord += " ";
+        if (currentWord.length < inputValue.length) {
+            updatedWord = ""
+            for (let i = 0; i < inputValue.length; i++) {
+                if (inputValue[i] === currentWord[i]) {
+                    updatedWord += `<span class="correct">${currentWord[i]}</span>`;
+                } else if (inputValue[i] !== undefined) {
+                    updatedWord += `<span class="incorrect">${inputValue[i]}</span>`;
+                } else {
+                    updatedWord += `<span>${currentWord[i]}</span>`;
+                }
+            }
+        }
 
+        updatedWord += " ";
         wordDisplay.children[currentWordIndex].innerHTML = updatedWord;
     });
 };

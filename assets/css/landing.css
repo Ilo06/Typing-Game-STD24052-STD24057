@@ -31,6 +31,15 @@ body {
     }
 }
 
+@keyframes appear {
+    from{
+        opacity: 0%;
+    }to{
+        opacity: 100%;
+
+    }
+}
+
 main {
     display: flex;
     transition: all ease 1s;
@@ -90,6 +99,7 @@ main {
     text-align: center;
     margin-bottom: 50px;
     font-size: 18px;
+    animation: appear 1s 1 ease-in-out;
 }
 
 #start-button {
@@ -104,7 +114,16 @@ main {
     padding-inline: 20px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all ease 0.2;
 }
+
+#start-button:active{
+    scale: 0.9;
+    filter: brightness(0.9);
+    transition: all ease 0.2;
+}
+
 
 #start-up-images {
     width: 50vw;
@@ -123,7 +142,7 @@ main {
 }
 .background-image{
     position: absolute;
-    scale: 1.2;
+    scale: 0.6;
 }
 @keyframes cursor {
     50% {
