@@ -1,7 +1,7 @@
 {
-  "name": "typing-website-template",
+  "name": "Typing Test",
   "version": "1.0.0",
-  "description": "A barebones typing website for you to complete. ",
+  "description": "Speedtyping is an art of swift fingers dancing across keys, capturing thoughts at lightning pace. The rhythm of words flows effortlessly, mind and hands in perfect synchrony. Errors may slip, but speed is king. Every stroke counts, every second matters. It's not just typing—it's expression at full throttle.",
   "main": "index.html",
   "type": "module",
   "scripts": {
@@ -12,6 +12,6 @@
     "game",
     "speedtyping"
   ],
-  "author": "HEI Madagascar : Toky & Fiantso",
+  "author": "HEI Madagascar : Toky, Fiantso, Ilo, Vaniaina",
   "license": "ISC"
 }

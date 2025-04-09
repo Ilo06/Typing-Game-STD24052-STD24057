@@ -31,7 +31,14 @@ header{
     border-radius: 10px;
     margin-bottom: 0px;
     margin-top: 10px;
+    /* height: 80px; */
+    height: 80px;
+    overflow-y: hidden;
 }
+
+/* #word-display::-webkit-scrollbar{
+    display: none;
+} */
 
 main {
     display: flex;
@@ -211,16 +218,20 @@ main {
     border-style: none;
     outline: none;
     position: absolute;
-    left: 20%;
-    top: 20%;
+    left: 16rem;
+    top: 8rem;
     width: 55%;
-    height: 20%;
+    height: 80px;
     opacity: 1;
     background-color: transparent;
     backdrop-filter: blur(15px);
     transition: all ease 0.2s;
     font-size: 50px;
     text-align: center;
+    color: var(--secondary-color);
+    font-size: 25px;
+    font-weight: 700;
+    font-family: monospace;
     cursor: pointer;
 }
 
