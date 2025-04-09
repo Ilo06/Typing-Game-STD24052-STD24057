@@ -18,15 +18,29 @@ body {
     background-color: var(--primary-color);
 }
 
-.disapear{
+.disapear {
     animation: disapear 1s 1 ease-in-out;
 
 }
+
 @keyframes disapear {
-    from{
+    from {
         opacity: 100%;
-    }to{
+    }
+
+    to {
         opacity: 0%;
+
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
 
     }
 }
@@ -68,8 +82,8 @@ main {
     white-space: nowrap;
     overflow: hidden;
     animation:
-    typing 2s steps(12),
-    cursor .5s step-end infinite alternate;
+        typing 2s steps(12),
+        cursor .5s step-end infinite alternate;
 }
 
 .title-text-id {
@@ -82,14 +96,16 @@ main {
     overflow: hidden;
     font-weight: 600;
     animation:
-    typing 2.5s steps(19),
-    cursor .5s step-end infinite alternate;
+        typing 2.5s steps(19),
+        cursor .5s step-end infinite alternate;
 }
-.title-text-description{
+
+.title-text-description {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin-bottom: 50px;
     font-size: 18px;
+    animation: appear 1s 1 ease-in-out;
 }
 
 #start-button {
@@ -104,6 +120,20 @@ main {
     padding-inline: 20px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all ease 0.2;
+}
+
+#start-button:active {
+    scale: 0.9;
+    filter: brightness(0.9);
+    transition: all ease 0.2s;
+}
+
+#start-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all ease 0.2s;
 }
 
 #start-up-images {
@@ -116,15 +146,18 @@ main {
     align-items: center;
     transition: all ease 1s;
 }
-.typewriter-image{
+
+.typewriter-image {
     width: 350px;
     z-index: 3;
     animation: 2s floating infinite;
 }
-.background-image{
+
+.background-image {
     position: absolute;
-    scale: 1.2;
+    scale: 0.6;
 }
+
 @keyframes cursor {
     50% {
         border-right: 0px solid;
@@ -136,13 +169,16 @@ main {
         width: 0;
     }
 }
+
 @keyframes floating {
-    0%{
+    0% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(20px);
     }
+
     100% {
         transform: translateY(0px);
     }

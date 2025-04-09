@@ -8,6 +8,7 @@
 
 body {
     background-color: var(--primary-color);
+    height: fit-content;
 }
 
 h1 {
@@ -30,7 +31,14 @@ header{
     border-radius: 10px;
     margin-bottom: 0px;
     margin-top: 10px;
+    /* height: 80px; */
+    height: 80px;
+    overflow-y: hidden;
 }
+
+/* #word-display::-webkit-scrollbar{
+    display: none;
+} */
 
 main {
     display: flex;
@@ -56,7 +64,7 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--secondary-color);
     margin: 0%;
-    font-size: 16px;
+    font-size: 14px;
     text-wrap: nowrap;
 
 }
@@ -65,7 +73,7 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--secondary-color);
     font-weight: 600;
-    font-size: 30px;
+    font-size: 20px;
     margin: 0%;
 
 }
@@ -171,9 +179,10 @@ main {
 #restart-button:active {
     transition: all ease 0.2s;
     scale: 0.9;
+    filter: brightness(0.9);
 }
 
-#input-field {
+/* #input-field {
     border-style: none;
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -190,7 +199,7 @@ main {
 #input-field:focus {
     text-decoration: none;
     outline: none;
-}
+} */
 
 
 
@@ -202,23 +211,27 @@ main {
     color: #F94449;
 }
 
-/* 
+
 #input-field {
     border-radius: 10px;
     padding: 30px;
     border-style: none;
     outline: none;
     position: absolute;
-    left: 20%;
-    top: 20%;
+    left: 16rem;
+    top: 8rem;
     width: 55%;
-    height: 20%;
+    height: 80px;
     opacity: 1;
     background-color: transparent;
     backdrop-filter: blur(15px);
     transition: all ease 0.2s;
     font-size: 50px;
     text-align: center;
+    color: var(--secondary-color);
+    font-size: 25px;
+    font-weight: 700;
+    font-family: monospace;
     cursor: pointer;
 }
 
@@ -227,7 +240,7 @@ main {
     text-align: center;
     opacity: 0;
     font-size: 50px;
-} */
+}
 #restart-button {
     padding: 10px;
     border-radius: 10px;
@@ -265,6 +278,20 @@ main {
 
 .words-number {
     margin-left: 10px !important;
+}
+
+.hide{
+    opacity: 0;
+    scale: 0.5;
+    transition: all ease 0.2s;
+}
+
+.cursor{
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 1px;
+    width: 2px;
+    z-index: 1000;
 }
 
 /* #word-display::after {
