@@ -32,9 +32,9 @@ const restartButton = document.getElementById("restart-button")
 //updated word to be displayed on wordDisplay after or while typing it
 let updatedWord = "";
 
-// //Used to push stats to a tab
-// let avgAccuracy = []
-// let avgWpm = []
+//Used to push stats to a tab
+let avgAccuracy = []
+let avgWpm = []
 
 
 
@@ -66,11 +66,17 @@ const startTest = (wordCount = 30) => {
 
     });
 
+
     //to make sure that all are reset
     inputField.value = "";
     wpmStat.textContent = "0.00";
     accuracyStat.textContent = "0.00%";
     updatedWord = ""
+    avgAccuracy = []
+    avgWpm = []
+
+    // getAvgStats()
+
 
 };
 
@@ -107,15 +113,17 @@ const getCurrentStats = () => {
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
 
-// const getAverageStats = () => {
-//     const { wpm, accuracy } = getCurrentStats()
+const getAvgStats = () => {
+    const { wpm, accuracy } = getCurrentStats()
 
-//     avgWpm.push(wpm)
-//     avgAccuracy.push(accuracy)
+    avgWpm.push(wpm)
+    avgAccuracy.push(accuracy)
 
-//     console.log(avgWpm, avgAccuracy);
-    
-// }
+    wpmStat.textContent = avgWpm.reduce((acc, value) => acc += (value / avgWpm.length), 0).toFixed(2)
+    accuracyStat.textContent = avgAccuracy.reduce((acc, value) => acc += (value / avgAccuracy.length), 0).toFixed(2)
+
+
+}
 
 // Move to the next word and update stats only on spacebar press
 const updateWord = (event) => {
@@ -123,13 +131,10 @@ const updateWord = (event) => {
         if (inputField.value.trim() === wordsToType[currentWordIndex]) {
             if (!previousEndTime) previousEndTime = startTime;
 
-            const { wpm, accuracy } = getCurrentStats();
-            // const wpm = avgWpm.reduce((acc, value) => acc += (value / avgWpm.length), 0)
-            // const accuracy = avgAccuracy.reduce((acc, value) => acc += (value / avgAccuracy.length), 0)
-            // console.log(avgWpm, avgAccuracy);
-
-            wpmStat.textContent = `${wpm}`
-            accuracyStat.textContent = `${accuracy}%`
+            // const { wpm, accuracy } = getCurrentStats();
+            // wpmStat.textContent = `${wpm}`
+            // accuracyStat.textContent = `${accuracy}%`
+            getAvgStats()
 
             currentWordIndex++;
             previousEndTime = Date.now();
@@ -140,12 +145,11 @@ const updateWord = (event) => {
         } else if (inputField.value.trim() != wordsToType[currentWordIndex]) {
             if (!previousEndTime) previousEndTime = startTime;
 
-            const { wpm, accuracy } = getCurrentStats();
-            // const wpm = avgWpm.reduce((acc, value) => acc += (value / avgWpm.length), 0)
-            // const accuracy = avgAccuracy.reduce((acc, value) => acc += (value / avgAccuracy.length), 0)
-            // console.log(avgWpm, avgAccuracy);
-            wpmStat.textContent = `${wpm}`
-            accuracyStat.textContent = `${accuracy}%`
+            // const { wpm, accuracy } = getCurrentStats();
+
+            // wpmStat.textContent = `${wpm}`
+            // accuracyStat.textContent = `${accuracy}%`
+            getAvgStats()
 
             currentWordIndex++;
             previousEndTime = Date.now();
@@ -228,3 +232,38 @@ const changeLetterColor = () => {
 
 changeLetterColor()
 
+//used to put "Click here to start" or current input field to value of input field depending on focus event
+let currentInputFieldValue = "";
+
+inputField.addEventListener("focusout", () => {
+    currentInputFieldValue = inputField.value;
+    restartButton.addEventListener("click", ()=> {
+        currentInputFieldValue = ""
+    })
+    inputField.value = "Click here to start";
+})
+inputField.addEventListener("focusin", () => {
+    inputField.value = currentInputFieldValue;
+})
+
+
+
+
+let time = 15
+const timer = () => {
+    const timerDiv = document.getElementById("timer")
+    let originalTime = time
+
+    if (time > 0) {
+        setInterval(() => {
+            timerDiv.style.width = `${((time - 1) * 100) / originalTime}%`
+            console.log(time, timerDiv.style.width);
+            time--
+        }, 1000);
+    }
+}
+
+timer()
+document.addEventListener("keydown", () => {
+    inputField.focus()
+})

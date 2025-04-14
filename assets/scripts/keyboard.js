@@ -1,29 +1,3 @@
-const a = document.getElementById("a")
-const z = document.getElementById("z")
-const e = document.getElementById("e")
-const r = document.getElementById("r")
-const t = document.getElementById("t")
-const y = document.getElementById("y")
-const u = document.getElementById("u")
-const i = document.getElementById("i")
-const o = document.getElementById("o")
-const p = document.getElementById("p")
-const q = document.getElementById("q")
-const s = document.getElementById("s")
-const d = document.getElementById("d")
-const f = document.getElementById("f")
-const g = document.getElementById("g")
-const h = document.getElementById("h")
-const j = document.getElementById("j")
-const k = document.getElementById("k")
-const l = document.getElementById("l")
-const m = document.getElementById("m")
-const w = document.getElementById("w")
-const x = document.getElementById("x")
-const c = document.getElementById("c")
-const v = document.getElementById("v")
-const b = document.getElementById("b")
-const n = document.getElementById("n")
 const space = document.getElementById("space")
 
 const inputField = document.getElementById("input-field")
@@ -42,7 +16,7 @@ showButton.addEventListener("click", () => {
 })
 
 window.addEventListener("keydown", (pressedKey) => {
-    const key = pressedKey.key.toLowerCase(); // pour éviter les soucis de majuscules
+    const key = pressedKey.key.toLowerCase();
     const validKeys = "azertyuiopqsdfghjklmwxcvbn ";
     
     if (validKeys.includes(key)) {
