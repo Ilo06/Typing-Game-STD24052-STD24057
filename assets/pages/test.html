@@ -1,24 +1,27 @@
 <!-- 
     This page needs to be started with LIVE SERVER or LIVE PREVIEW 
-                             /_-_-_-_-_-_-_-_-_-_-_-_-_-_
-                            /                          /
-                           / * STD24052 - STD24057 *  /
-                          /                          /
-                         _-_-_-_-_-_-_-_-_-_-_-_-_-_/
+    *:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:
+    *:*:*:*:*:*:*:*:*:*:*:*:*/_-_-_-_-_-_-_-_-_-_-_-_-_-_:*:*:*:*:
+    :*:*:*:*:*:*:*:*:*:*:*:*/                          /*:*:*:*:*:
+    *:*:*:*:*:*:*:*:*:*:*:*/ * STD24052 - STD24057 *  /:*:*:*:*:*:
+    :*:*:*:*:*:*:*:*:*:*:*/                          /*:*:*:*:*:*:
+    *:*:*:*:*:*:*:*:*:*:*_-_-_-_-_-_-_-_-_-_-_-_-_-_/:*:*:*:*:*:*:
+    *:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:
 -->
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Test</title>
     <script type="module" src="../scripts/script.js"></script>
     <script type="module" src="../scripts/keyboard.js"></script>
-    <link rel="stylesheet" href="../css/keyboard.css">
+    <script type="module" src="../scripts/settings.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/keyboard.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/settings.css">
 </head>
 
 <body>
@@ -46,18 +49,21 @@
     </header>
     <main>
         <p id="word-display"></p>
-        <input type="text" id="input-field" autocomplete="off" placeholder="Click Here To Start" autofocus>
+        <div class="timer-container">
+            <div id="timer"></div>
+        </div>
+        <input type="text" id="input-field" autocomplete="off" spellcheck="false" placeholder="Click Here To Start" autofocus>
         <div class="stats">
             <div class="block-stat correct-stat">
                 <h3>Correct Keystrokes</h3>
                 <p>30</p>
             </div>
             <div class="block-stat speed-stat">
-                <h3>WPM</h3>
+                <h3>Average WPM</h3>
                 <p id="wpmStat">99</p>
             </div>
             <div class="block-stat accuracy-stat">
-                <h3>Accuracy</h3>
+                <h3>Average Accuracy</h3>
                 <p id="accuracyStat">86%</p>
             </div>
         </div>
@@ -98,19 +104,8 @@
             </div>
             <button type="button" id="space"></button>
         </div>
-
-        <!-- <div class="average-stats">
-            <div class="avg-accuracy block-stat">
-                <h3>Average Accuracy</h3>
-                <p id="avg-accuracy">86%</p>
-            </div>
-            <div class="avg-wpm block-stat">
-                <h3>Average WPM</h3>
-                <p id="avg-wpm">86%</p>
-            </div>
-        </div> -->
-
     </main>
+    
 
 </body>
 
