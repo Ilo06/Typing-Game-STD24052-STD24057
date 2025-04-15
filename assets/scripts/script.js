@@ -1,11 +1,9 @@
-/**
- * Point culture (en Français car je suis un peu obligé): 
- * Dans ce genre de jeu, un mot equivaut a 5 caractères, y compris les espaces. 
- * La precision, c'est le pourcentage de caractères tapées correctement sur toutes les caractères tapées.
- * 
- * Sur ce... Amusez-vous bien ! 
-*/
+
 import { wordsList } from "./modules/words.js";
+
+let time = 15;
+let intervalId = null;
+
 
 let startTime = null, previousEndTime = null;
 let currentWordIndex = 0;
@@ -22,6 +20,7 @@ const inputField = document.getElementById("input-field");
 //some statistics
 const wpmStat = document.getElementById("wpmStat");
 const accuracyStat = document.getElementById("accuracyStat");
+const leftTime = document.getElementById("left-time")
 
 //used to import words from words.js
 const words = wordsList;
@@ -37,6 +36,9 @@ let avgAccuracy = []
 let avgWpm = []
 
 
+//time mode select
+const timerSelect = document.getElementById("timer-select");
+
 
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
@@ -44,8 +46,57 @@ const getRandomWord = (mode) => {
     return wordList[Math.floor(Math.random() * wordList.length)];
 };
 
+//used to get the hammming distance between the correct and the writen word in order to calculate the accuracy
+const hamming = (word1, word2) => {
+    let distance = word1.length;
+
+    for (let i = 0; i < word1.length; i++) {
+        word1[i] != word2[i] ? distance-- : true;
+    }
+    if (word2.length > word1.length) {
+        distance -= (word2.length - word1.length)
+    }
+    if (distance < 0) {
+        distance = 0
+    }
+
+    return distance
+}
+
+
+const startTimer = () => {
+    if (startTime || intervalId !== null) return; // Empêche de lancer plusieurs fois
+
+    startTime = Date.now();
+    previousEndTime = Date.now(); // Pour stats
+
+    const timerDiv = document.getElementById("timer");
+    let originalTime = time;
+
+    intervalId = setInterval(() => {
+        if (time > 0) {
+            time--;
+            timerDiv.style.width = `${(time * 100) / originalTime}%`;
+            leftTime.textContent = time;
+        } else {
+            clearInterval(intervalId);
+            intervalId = null;
+            inputField.disabled = true;
+        }
+    }, 1000);
+}
+
 // Initialize the typing test
 const startTest = (wordCount = 30) => {
+    clearInterval(intervalId); // Stop timer si actif
+    intervalId = null;
+    time = parseInt(timerSelect.value);
+    inputField.disabled = false;
+    leftTime.textContent = time;
+    document.getElementById("timer").style.width = "100%";
+
+
+
     wordsToType.length = 0; // Clear previous words
     wordDisplay.innerHTML = ""; // Clear display
     currentWordIndex = 0;
@@ -74,33 +125,8 @@ const startTest = (wordCount = 30) => {
     updatedWord = ""
     avgAccuracy = []
     avgWpm = []
-
-    // getAvgStats()
-
-
 };
 
-// Start the timer when user begins typing
-const startTimer = () => {
-    if (!startTime) startTime = Date.now();
-};
-
-//used to get the hammming distance between the correct and the writen word in order to calculate the accuracy
-const hamming = (word1, word2) => {
-    let distance = word1.length;
-
-    for (let i = 0; i < word1.length; i++) {
-        word1[i] != word2[i] ? distance-- : true;
-    }
-    if (word2.length > word1.length) {
-        distance -= (word2.length - word1.length)
-    }
-    if (distance < 0) {
-        distance = 0
-    }
-
-    return distance
-}
 
 
 
@@ -122,7 +148,6 @@ const getAvgStats = () => {
     wpmStat.textContent = avgWpm.reduce((acc, value) => acc += (value / avgWpm.length), 0).toFixed(2)
     accuracyStat.textContent = avgAccuracy.reduce((acc, value) => acc += (value / avgAccuracy.length), 0).toFixed(2)
 
-
 }
 
 // Move to the next word and update stats only on spacebar press
@@ -130,10 +155,6 @@ const updateWord = (event) => {
     if (event.key === " ") { // Check if spacebar is pressed
         if (inputField.value.trim() === wordsToType[currentWordIndex]) {
             if (!previousEndTime) previousEndTime = startTime;
-
-            // const { wpm, accuracy } = getCurrentStats();
-            // wpmStat.textContent = `${wpm}`
-            // accuracyStat.textContent = `${accuracy}%`
             getAvgStats()
 
             currentWordIndex++;
@@ -144,11 +165,6 @@ const updateWord = (event) => {
             event.preventDefault(); // Prevent adding extra spaces
         } else if (inputField.value.trim() != wordsToType[currentWordIndex]) {
             if (!previousEndTime) previousEndTime = startTime;
-
-            // const { wpm, accuracy } = getCurrentStats();
-
-            // wpmStat.textContent = `${wpm}`
-            // accuracyStat.textContent = `${accuracy}%`
             getAvgStats()
 
             currentWordIndex++;
@@ -171,7 +187,6 @@ const highlightNextWord = () => {
                 wordElements[currentWordIndex - 1].style.color = "#8BCA84";
 
             } else {
-                // wordElements[currentWordIndex - 1].innerHTML = `${inputField.value.trim()} `
                 wordElements[currentWordIndex].style.color = "#F94449";
             }
         }
@@ -187,13 +202,8 @@ inputField.addEventListener("keydown", (event) => {
 });
 modeSelect.addEventListener("change", () => startTest(numberSelect.value));
 numberSelect.addEventListener("change", () => startTest(numberSelect.value));
+timerSelect.addEventListener("change", () => startTest(numberSelect.value));
 
-//Start the test when "Enter" key is pressed
-document.addEventListener("keydown", (e) => e.key == "Enter" ? startTest(numberSelect.value) : true)
-restartButton.addEventListener("click", () => startTest(numberSelect.value))
-
-// Start the test
-startTest(numberSelect.value);
 
 //Change letter color based on how well you write the word
 const changeLetterColor = () => {
@@ -237,7 +247,7 @@ let currentInputFieldValue = "";
 
 inputField.addEventListener("focusout", () => {
     currentInputFieldValue = inputField.value;
-    restartButton.addEventListener("click", ()=> {
+    restartButton.addEventListener("click", () => {
         currentInputFieldValue = ""
     })
     inputField.value = "Click here to start";
@@ -248,22 +258,14 @@ inputField.addEventListener("focusin", () => {
 
 
 
+// document.addEventListener("keydown", () => {
+//     inputField.focus()
+// })
 
-let time = 15
-const timer = () => {
-    const timerDiv = document.getElementById("timer")
-    let originalTime = time
 
-    if (time > 0) {
-        setInterval(() => {
-            timerDiv.style.width = `${((time - 1) * 100) / originalTime}%`
-            console.log(time, timerDiv.style.width);
-            time--
-        }, 1000);
-    }
-}
+//Start the test when "Enter" key is pressed
+document.addEventListener("keydown", (e) => e.key == "Enter" ? startTest(numberSelect.value) : true)
+restartButton.addEventListener("click", () => startTest(numberSelect.value))
 
-timer()
-document.addEventListener("keydown", () => {
-    inputField.focus()
-})
+// Start the test
+startTest(numberSelect.value);

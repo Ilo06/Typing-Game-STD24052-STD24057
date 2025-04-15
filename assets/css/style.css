@@ -28,16 +28,22 @@ header {
     font-size: 20px;
     font-family: monospace;
     background-color: var(--terty-color);
-    /* background-color: transparent; */
     font-weight: 600;
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 0px;
     margin-top: 5px;
-    /* height: 80px; */
-    height: 80px;
-    overflow-y: hidden;
+
+    height: auto;
+    max-height: calc(1.5em * 3 + 60px); /* 3 lignes + padding */
+    overflow: hidden;
+    line-height: 1.5em;
+
+    transition: max-height 0.3s ease;
+
+    
 }
+
 
 
 
@@ -189,24 +195,6 @@ main {
     filter: brightness(0.9);
 }
 
-/* #input-field {
-    border-style: none;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-family: monospace;
-    font-size: 20px;
-    align-self: flex-start;
-    width: 160px;
-    text-decoration: none;
-}
-
-#input-field:focus {
-    text-decoration: none;
-    outline: none;
-} */
 
 
 
@@ -255,30 +243,6 @@ main {
     opacity: 0;
     font-size: 50px;
 }
-
-
-
-/* #input-field{
-    border-radius: 10px;
-    padding: 20px;
-    border-style: none;
-    outline: none;
-    position: absolute;
-    left: 29rem;
-    top: 9.5rem;
-    width: fit-content;
-    height: fit-content;
-    background-color: var(--secondary-color);
-    opacity: 1;
-    transition: all ease 0.2s;
-    font-size: 30px;
-    text-align: center;
-    color: var(--primary-color);
-    font-size: 25px;
-    font-weight: 700;
-    font-family: monospace;
-    cursor: pointer;
-} */
 
 
 #restart-button {
@@ -333,29 +297,6 @@ main {
     z-index: 1000;
 }
 
-/* #word-display::after {
-    content: "";
-    height: 20px;
-    width: 3px;
-    left: calc(20% + 40px);
-    top: 160px;
-    border-radius: 1px;
-    position: absolute;
-    background-color: var(--secondary-color);
-    animation: blink 1s reverse infinite ease;
-}
-
-@keyframes blink {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-} */
-
-
 
 .timer-container {
     width: 80%;
@@ -371,4 +312,8 @@ main {
     height: 3px;
     transition: all cubic-bezier(1, 1, 1, 1) 1s;
     border-radius: 2px;
+}
+
+#timer-select-container{
+    margin-left: 10px !important;
 }

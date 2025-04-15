@@ -44,6 +44,15 @@
                     <option value="50">50</option>
                 </select>
             </div>
+            <div id="timer-select-container" class="timer-select moder">
+                <label for="timer-select">Timer</label>
+                <select id="timer-select">
+                    <option value="15">15s</option>
+                    <option value="30">30s</option>
+                    <option value="60">60s</option>
+                </select>
+            </div>
+            
         </div>
 
     </header>
@@ -54,9 +63,9 @@
         </div>
         <input type="text" id="input-field" autocomplete="off" spellcheck="false" placeholder="Click Here To Start" autofocus>
         <div class="stats">
-            <div class="block-stat correct-stat">
-                <h3>Correct Keystrokes</h3>
-                <p>30</p>
+            <div class="block-stat time-stat">
+                <h3>Left Time</h3>
+                <p id="left-time">30</p>
             </div>
             <div class="block-stat speed-stat">
                 <h3>Average WPM</h3>
