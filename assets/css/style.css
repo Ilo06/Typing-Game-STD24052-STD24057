@@ -33,6 +33,7 @@ header {
     border-radius: 10px;
     margin-bottom: 0px;
     margin-top: 5px;
+    width: 92%;
 
     height: auto;
     max-height: calc(1.5em * 3 + 60px); /* 3 lignes + padding */
@@ -97,6 +98,7 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
 
 
@@ -150,7 +152,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     padding-block: 5px;
-    width: 160px;
+    width: 33%;
 }
 
 .moder select {
@@ -218,6 +220,7 @@ main {
     width: 55%;
     height: 80px;
     opacity: 1;
+    /* width: 100%; */
     background-color: transparent;
     backdrop-filter: blur(15px);
     transition: all ease 0.2s;
@@ -299,7 +302,7 @@ main {
 
 
 .timer-container {
-    width: 80%;
+    width: 100%;
     height: 3px;
     border-radius: 2px;
     background-color: transparent;
@@ -316,4 +319,39 @@ main {
 
 #timer-select-container{
     margin-left: 10px !important;
+}
+
+
+@media (max-width : 720px) {
+    .stats{
+        flex-direction: column;
+    }
+    .block-stat{
+        width: fit-content;
+    }
+}
+
+#settings-icon{
+    cursor: pointer;
+    font-size: 25px;
+    color: var(--secondary-color);
+    border-radius: 10px;
+    background-color: var(--terty-color);
+    padding: 10px;
+    transition: all ease 0.2s;
+    margin: 0%;
+}
+
+#settings-icon:active{
+    scale: 0.9;
+    filter: brightness(0.8);
+    transition: all ease 0.2s;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
 }
