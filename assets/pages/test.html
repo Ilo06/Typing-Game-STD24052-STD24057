@@ -44,8 +44,17 @@
                     <option value="50">50</option>
                 </select>
             </div>
+            <div id="timer-select-container" class="timer-select moder">
+                <label for="timer-select">Timer</label>
+                <select id="timer-select">
+                    <option value="15">15s</option>
+                    <option value="30">30s</option>
+                    <option value="60">60s</option>
+                </select>
+            </div>
+            
         </div>
-
+        
     </header>
     <main>
         <p id="word-display"></p>
@@ -54,9 +63,9 @@
         </div>
         <input type="text" id="input-field" autocomplete="off" spellcheck="false" placeholder="Click Here To Start" autofocus>
         <div class="stats">
-            <div class="block-stat correct-stat">
-                <h3>Correct Keystrokes</h3>
-                <p>30</p>
+            <div class="block-stat time-stat">
+                <h3>Left Time</h3>
+                <p id="left-time">30</p>
             </div>
             <div class="block-stat speed-stat">
                 <h3>Average WPM</h3>
@@ -67,8 +76,12 @@
                 <p id="accuracyStat">86%</p>
             </div>
         </div>
-        <button id="restart-button">Restart<i class='bx bx-refresh'></i></button>
-        <button type="button" id="keyboard-show"><i class="bx bxs-keyboard" id="icon"></i></button>
+        <div class="buttons">
+            <button type="button" id="keyboard-show"><i class="bx bxs-keyboard" id="icon"></i></button>
+            <button id="restart-button">Restart<i class='bx bx-refresh'></i></button>
+            <i class='bx bxs-cog' id="settings-icon"></i>
+
+        </div>
         <div class="keyboard hide" id="keyboard">
             <div class="row1">
                 <button id="a" class="keyboard-button" type="button">A</button>
@@ -104,7 +117,79 @@
             </div>
             <button type="button" id="space"></button>
         </div>
+        <div class="settings hide" id="settings">
+            <h1><i class='bx bxs-cog'></i>Settings</h1>
+            <i class="bx bxs-x-circle" id="settings-close-icon"></i>
+            <div class="color-theme">
+                <p>You can change the color theme of the main app on your mood or what you like</p>
+                <div class="themes">
+                    <div id="default">
+                        <p>Default</p>
+                    </div>
+                    <div id="steel-gray">
+                        <p>Steel Gray</p>
+                    </div>
+                    <div id="wood">
+                        <p>Wood</p>
+                    </div>
+                    <div id="desert-sand">
+                        <p>Desert Sand</p>
+                    </div>
+                    <div id="custom">
+                        <p>Custom</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="language">
+                <p>You don't like English ? </p>
+                <div class="language-choice">
+                    <div id="english">
+                        <p>English</p>
+                    </div>
+                    <div id="malagasy">
+                        <p>Malagasy</p>
+                    </div>
+                    <div id="french">
+                        <p>French</p>
+                    </div>
+                </div>
+            </div>
+            <div class="font">
+                <p>You don't like the font either, well, change it yourself !</p>
+                <div class="font-choice">
+                    <div id="timesnr">
+                        <p style="font-family: 'Times New Roman', Times, serif;">Times New Roman</p>
+                    </div>
+                    <div id="monospace">
+                        <p style="font-family: monospace;">Monospace</p>
+                    </div>
+                    <div id="arial">
+                        <p style="font-family: Arial, Helvetica, sans-serif;">Arial</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="custom-color hide" id="custom-color">
+            <h3>Custom Theme</h3>
+            <i class="bx bxs-x-circle" id="close-icon"></i>
+            <div class="custom-color-input">
+                <div class="primary-color-container">
+                    <h5>Primary Color</h5>
+                    <input type="color" id="primary-color-input">
+                </div>
+                <div class="secondary-color-container">
+                    <h5>Secondary Color</h5>
+                    <input type="color" id="secondary-color-input">
+                </div>
+            </div>
+            <button type="button" id="apply-button">Apply</button>
+        
+        </div>
     </main>
+    
     
 
 </body>

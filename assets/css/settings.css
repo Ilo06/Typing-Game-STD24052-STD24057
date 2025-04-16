@@ -10,6 +10,7 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-left: 0%;
 }
 
 .bxs-cog{
@@ -30,6 +31,12 @@
     margin: 5% 10%;
     border: 1px solid var(--terty-color);
     transition: all ease 0.2s;
+    box-shadow: 0px 0px 10px var(--terty-color);
+
+}
+
+.color-theme p{
+    text-align: left;
 }
 
 .color-theme,
@@ -68,6 +75,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all ease 0.2s;
+    background-color: var(--terty-color);
 
 }
 
@@ -201,4 +209,37 @@
     right: 0.2rem;
     color: var(--secondary-color);
     font-size: 30px;
+}
+
+
+.font{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.font-choice{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.font-choice p{
+    margin: 0%;
+}
+
+#timesnr, #monospace, #arial{
+    background-color: var(--terty-color);
+    border-radius: 10px;
+    margin: 0%;
+    padding-inline: 20px;
+    padding-block: 10px;
+    cursor: pointer;
+}
+
+#arial{
+    font-size: 13px;
 }

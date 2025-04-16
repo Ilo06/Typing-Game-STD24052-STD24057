@@ -28,16 +28,23 @@ header {
     font-size: 20px;
     font-family: monospace;
     background-color: var(--terty-color);
-    /* background-color: transparent; */
     font-weight: 600;
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 0px;
     margin-top: 5px;
-    /* height: 80px; */
-    height: 80px;
-    overflow-y: hidden;
+    width: 92%;
+
+    height: auto;
+    max-height: calc(1.5em * 3 + 60px); /* 3 lignes + padding */
+    overflow: hidden;
+    line-height: 1.5em;
+
+    transition: max-height 0.3s ease;
+
+    
 }
+
 
 
 
@@ -91,6 +98,7 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
 
 
@@ -144,7 +152,7 @@ main {
     border-radius: 10px;
     padding: 30px;
     padding-block: 5px;
-    width: 160px;
+    width: 33%;
 }
 
 .moder select {
@@ -189,24 +197,6 @@ main {
     filter: brightness(0.9);
 }
 
-/* #input-field {
-    border-style: none;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-family: monospace;
-    font-size: 20px;
-    align-self: flex-start;
-    width: 160px;
-    text-decoration: none;
-}
-
-#input-field:focus {
-    text-decoration: none;
-    outline: none;
-} */
 
 
 
@@ -230,6 +220,7 @@ main {
     width: 55%;
     height: 80px;
     opacity: 1;
+    /* width: 100%; */
     background-color: transparent;
     backdrop-filter: blur(15px);
     transition: all ease 0.2s;
@@ -255,30 +246,6 @@ main {
     opacity: 0;
     font-size: 50px;
 }
-
-
-
-/* #input-field{
-    border-radius: 10px;
-    padding: 20px;
-    border-style: none;
-    outline: none;
-    position: absolute;
-    left: 29rem;
-    top: 9.5rem;
-    width: fit-content;
-    height: fit-content;
-    background-color: var(--secondary-color);
-    opacity: 1;
-    transition: all ease 0.2s;
-    font-size: 30px;
-    text-align: center;
-    color: var(--primary-color);
-    font-size: 25px;
-    font-weight: 700;
-    font-family: monospace;
-    cursor: pointer;
-} */
 
 
 #restart-button {
@@ -333,32 +300,9 @@ main {
     z-index: 1000;
 }
 
-/* #word-display::after {
-    content: "";
-    height: 20px;
-    width: 3px;
-    left: calc(20% + 40px);
-    top: 160px;
-    border-radius: 1px;
-    position: absolute;
-    background-color: var(--secondary-color);
-    animation: blink 1s reverse infinite ease;
-}
-
-@keyframes blink {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-} */
-
-
 
 .timer-container {
-    width: 80%;
+    width: 100%;
     height: 3px;
     border-radius: 2px;
     background-color: transparent;
@@ -371,4 +315,43 @@ main {
     height: 3px;
     transition: all cubic-bezier(1, 1, 1, 1) 1s;
     border-radius: 2px;
+}
+
+#timer-select-container{
+    margin-left: 10px !important;
+}
+
+
+@media (max-width : 720px) {
+    .stats{
+        flex-direction: column;
+    }
+    .block-stat{
+        width: fit-content;
+    }
+}
+
+#settings-icon{
+    cursor: pointer;
+    font-size: 25px;
+    color: var(--secondary-color);
+    border-radius: 10px;
+    background-color: var(--terty-color);
+    padding: 10px;
+    transition: all ease 0.2s;
+    margin: 0%;
+}
+
+#settings-icon:active{
+    scale: 0.9;
+    filter: brightness(0.8);
+    transition: all ease 0.2s;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
 }
