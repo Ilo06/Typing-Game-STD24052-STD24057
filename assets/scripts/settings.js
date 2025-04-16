@@ -18,15 +18,16 @@ const closeIcon = document.getElementById("close-icon")
 const settingsButton = document.getElementById("settings-icon")
 
 desertSand.addEventListener("click", () => {
-    root.style.setProperty("--secondary-color", "#102542")
-    root.style.setProperty("--primary-color", "#F87060")
-    root.style.setProperty("--terty-color", "#B04F45")
+    root.style.setProperty("--terty-color", "#6E6E6E ")  
+    root.style.setProperty("--primary-color", "#838181")     
+    root.style.setProperty("--secondary-color", "#2A4551")      
     customBox.classList.add("hide")
 })
+
 wood.addEventListener("click", () => {
-    root.style.setProperty("--secondary-color", "#D9A8A1")
-    root.style.setProperty("--primary-color", "#583123")
-    root.style.setProperty("--terty-color", "#3B2016")
+    root.style.setProperty("--secondary-color", "#BFA88F")  
+    root.style.setProperty("--primary-color", "#4B3B30")     
+    root.style.setProperty("--terty-color", "#2C1E16")      
     customBox.classList.add("hide")
 })
 steelGray.addEventListener("click", () => {
@@ -40,7 +41,7 @@ defaultColor.addEventListener("click", () => {
     root.style.setProperty("--primary-color", "#374151")
     root.style.setProperty("--terty-color", "#1F2937")
     customBox.classList.add("hide")
-})  
+})
 
 custom.addEventListener("click", () => {
     customBox.classList.remove("hide")
@@ -60,6 +61,23 @@ settingsCloseIcon.addEventListener("click", () => {
 })
 
 settingsButton.addEventListener("click", () => {
-    
+
     settings.classList.remove("hide")
 })
+
+const malagasy = document.getElementById("malagasy")
+const english = document.getElementById("english")
+const french = document.getElementById("french")
+
+
+malagasy.addEventListener("click", ()=> {
+    settings.classList.add("hide")
+});
+
+french.addEventListener("click", ()=> {
+    settings.classList.add("hide")
+});
+
+english.addEventListener("click", ()=> {
+    settings.classList.add("hide")
+});

@@ -1,5 +1,5 @@
 import { wordsList } from "./modules/words.js";
-import { storage as memoryStorage } from "./localStorage.js"; // utilisé seulement pour init
+import { storage as memoryStorage } from "./localStorage.js";
 
 let time = 15;
 let intervalId = null;
@@ -38,12 +38,35 @@ let avgWpm = []
 //time mode select
 const timerSelect = document.getElementById("timer-select");
 
+let language = "english"
+
+const malagasy = document.getElementById("malagasy")
+const english = document.getElementById("english")
+const french = document.getElementById("french")
+
+
+malagasy.addEventListener("click", ()=> {
+    language = "malagasy"
+    startTest(numberSelect.value)
+});
+
+french.addEventListener("click", ()=> {
+    language = "french"
+    startTest(numberSelect.value)
+});
+
+english.addEventListener("click", ()=> {
+    language = "english"
+    startTest(numberSelect.value)
+});
+
 
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
-    const wordList = words[mode];
+    const wordList = words[language][mode];
     return wordList[Math.floor(Math.random() * wordList.length)];
 };
+
 
 //used to get the hammming distance between the correct and the writen word in order to calculate the accuracy
 const hamming = (word1, word2) => {
