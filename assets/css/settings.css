@@ -248,3 +248,13 @@
     scale: 0.9;
     transition: all ease 0.2s;
 }
+
+#english:hover, #malagasy:hover, #french:hover, #timesnr:hover, #monospace:hover, #arial:hover, #comic:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all ease 0.2s;
+}
+
+#comic{
+    font-size: 10px;
+}

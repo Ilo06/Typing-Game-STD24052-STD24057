@@ -33,6 +33,7 @@ wpmHistory.forEach((word) => {
     span.classList.add("stat-animation")
     span.style.backgroundColor = "var(--primary-color)"
     chart.appendChild(span);
+
 });
 
 next.addEventListener("click", () => {
