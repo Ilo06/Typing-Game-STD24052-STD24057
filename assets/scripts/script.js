@@ -264,6 +264,9 @@ const changeLetterColor = () => {
 };
 
 changeLetterColor();
+document.addEventListener("keydown", ()=> {
+    inputField.focus()
+})
 
 let currentInputFieldValue = "";
 
