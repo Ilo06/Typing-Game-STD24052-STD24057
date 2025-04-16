@@ -316,7 +316,7 @@ main {
     background-color: var(--secondary-color);
     width: 100%;
     height: 3px;
-    transition: all cubic-bezier(1, 1, 1, 1) 1s;
+    transition: all linear 1s;
     border-radius: 2px;
 }
 

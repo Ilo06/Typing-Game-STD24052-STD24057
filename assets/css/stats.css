@@ -9,8 +9,10 @@
 main {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 0px;
     margin-top: 20vh;
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 body {
@@ -30,6 +32,10 @@ body {
     background-color: var(--secondary-color);
     border-radius: 10px;
     padding: 10px 20px;
+    /* margin-right: 10px; */
+    width: 75%;
+    text-align: center;
+    /* font-size: 10px; */
 }
 
 #wpm,
@@ -41,6 +47,8 @@ body {
     padding: 30px;
     text-align: center;
     width: 140px;
+    margin: 0%;
+    margin-top: 10px;
 }
 
 #graphics {
@@ -49,7 +57,7 @@ body {
     border-radius: 10px;
     width: 50vw;
     margin-top: 20px;
-    height: 45vh;
+    height: auto;
 }
 
 .previous-sats {
@@ -68,4 +76,15 @@ body {
     background-color: var(--secondary-color);
     margin: 0%;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--terty-color);
+    font-family: monospace;
+    font-weight: 600;
+    padding-inline: 40px;
+    padding-block: 10px;
+    text-align: center;
+
 }
