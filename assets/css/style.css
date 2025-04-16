@@ -234,6 +234,7 @@ main {
     font-weight: 700;
     font-family: monospace;
     cursor: pointer;
+    opacity: 0;
 }
 
 #input-field:focus {
@@ -325,14 +326,7 @@ main {
 }
 
 
-@media (max-width : 720px) {
-    .stats{
-        flex-direction: column;
-    }
-    .block-stat{
-        width: fit-content;
-    }
-}
+
 
 #settings-icon{
     cursor: pointer;
@@ -357,4 +351,27 @@ main {
     align-items: center;
     justify-content: space-around;
     gap: 10px;
+}
+
+
+@media (max-width : 720px) {
+    body{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .stats{
+        flex-direction: column-reverse;
+    }
+    .block-stat{
+        width: fit-content;
+    }
+    
+    .moder{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    select{
+        font-size: 12px;
+    }
 }

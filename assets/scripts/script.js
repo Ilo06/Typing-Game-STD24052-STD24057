@@ -137,7 +137,7 @@ const startTest = (wordCount = 30) => {
     });
 
 
-    //to make sure that all are reset
+    //to make sure that all values are reset
     inputField.value = "";
     wpmStat.textContent = "0.00";
     accuracyStat.textContent = "0.00%";
@@ -202,7 +202,6 @@ const updateWord = (event) => {
         previousEndTime = Date.now();
     
         if (currentWordIndex === wordsToType.length - 1) {
-            // Tous les mots ont été saisis, fin du test
             inputField.disabled = true;
             changeData();
             return;
@@ -264,6 +263,9 @@ const changeLetterColor = () => {
 };
 
 changeLetterColor();
+document.addEventListener("keydown", ()=> {
+    inputField.focus()
+})
 
 let currentInputFieldValue = "";
 

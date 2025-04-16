@@ -1,5 +1,9 @@
 const root = document.documentElement
 
+const malagasy = document.getElementById("malagasy")
+const english = document.getElementById("english")
+const french = document.getElementById("french")
+
 const desertSand = document.getElementById("desert-sand");
 const wood = document.getElementById("wood");
 const steelGray = document.getElementById("steel-gray");
@@ -52,7 +56,6 @@ defaultColor.addEventListener("click", () => {
 
 custom.addEventListener("click", () => {
     customBox.classList.remove("hide")
-    // alert("caodicjo")
 })
 closeIcon.addEventListener("click", () => {
     customBox.classList.add("hide")
@@ -72,9 +75,6 @@ settingsButton.addEventListener("click", () => {
     settings.classList.remove("hide")
 })
 
-const malagasy = document.getElementById("malagasy")
-const english = document.getElementById("english")
-const french = document.getElementById("french")
 
 
 malagasy.addEventListener("click", ()=> {
