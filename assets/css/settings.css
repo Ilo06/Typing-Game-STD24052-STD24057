@@ -231,7 +231,7 @@
     margin: 0%;
 }
 
-#timesnr, #monospace, #arial{
+#timesnr, #monospace, #arial,#comic{
     background-color: var(--terty-color);
     border-radius: 10px;
     margin: 0%;

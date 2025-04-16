@@ -5,7 +5,10 @@
 
 
 }
-
+@font-face {
+    font-family: "Comic sans ms";
+    src: url(../font/ComicSansMS3.ttf);
+}
 body {
     background-color: var(--primary-color);
     height: fit-content;

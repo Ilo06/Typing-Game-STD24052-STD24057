@@ -21,6 +21,13 @@ const closeIcon = document.getElementById("close-icon")
 
 const settingsButton = document.getElementById("settings-icon")
 
+const timesnr = document.getElementById("timesnr")
+const monospace = document.getElementById("monospace")
+const arial = document.getElementById("arial")
+const comic = document.getElementById("comic")
+
+const displayedWord = document.getElementById("word-display")
+
 desertSand.addEventListener("click", () => {
     root.style.setProperty("--terty-color", "#6E6E6E ")  
     root.style.setProperty("--primary-color", "#838181")     
@@ -82,3 +89,22 @@ english.addEventListener("click", ()=> {
     settings.classList.add("hide")
 });
 
+timesnr.addEventListener("click", ()=> {
+    displayedWord.style.fontFamily = "'Times New Roman', Times, serif"
+    settings.classList.add("hide")
+})
+
+monospace.addEventListener("click", ()=> {
+    displayedWord.style.fontFamily = "monospace"
+    settings.classList.add("hide")
+})
+
+arial.addEventListener("click", ()=> {
+    displayedWord.style.fontFamily = "Arial, Helvetica, sans-serif"
+    settings.classList.add("hide")
+})
+
+comic.addEventListener("click", ()=> {
+    displayedWord.style.fontFamily = "'Comic sans ms'"
+    settings.classList.add("hide")
+})
