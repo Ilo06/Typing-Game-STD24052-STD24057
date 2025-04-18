@@ -63,6 +63,8 @@ body {
     height: auto;
     display: flex;
     flex-direction: row;
+    gap: 5px;
+    padding: 10px;
     align-items: last baseline;
     border: 10px solid var(--secondary-color);
 }
