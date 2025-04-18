@@ -258,3 +258,16 @@
 #comic{
     font-size: 10px;
 }
+
+
+@media (max-width : 720px) {
+    
+    .color-theme, .language, .font{
+        flex-direction: column;
+        margin-block: 40px;
+    }
+    .themes{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
