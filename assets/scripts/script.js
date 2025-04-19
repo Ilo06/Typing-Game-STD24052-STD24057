@@ -250,7 +250,9 @@ const changeLetterColor = () => {
                 updatedWord += `<span class="correct">${currentWord[i]}</span>`;
             } else if (inputValue[i] !== undefined) {
                 updatedWord += `<span class="incorrect">${inputValue[i]}</span>`;
-            } else {
+            } /*else if (i === inputValue.length) {
+                updatedWord += `<span class="cursor">${currentWord[i]}</span>`;
+            }*/ else {
                 updatedWord += `<span>${currentWord[i]}</span>`;
             }
         }
@@ -261,6 +263,7 @@ const changeLetterColor = () => {
         }
     });
 };
+
 
 changeLetterColor();
 document.addEventListener("keydown", ()=> {
