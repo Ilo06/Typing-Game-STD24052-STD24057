@@ -1,3 +1,6 @@
+# This Website needs Live Server or Live Preview to start
+
+
 # Vanilla Typing 
 
 ## Introduction

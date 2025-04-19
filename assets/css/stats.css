@@ -10,8 +10,10 @@ main {
     display: flex;
     flex-direction: row;
     gap: 0px;
+    height: 100%;
+
     /* margin-top: 20vh; */
-    /* align-items: center; */
+    align-items: center;
     /* justify-content: center; */
 
 }
@@ -58,16 +60,14 @@ body {
     background-color: var(--secondary-color);
     color: var(--terty-color);
     border-radius: 10px;
-    width: 50vw;
-    margin-top: 20px;
-    height: auto;
-    display: flex;
+    min-width: 50vw;
+    width: 500px;
+    min-height: 300px;
     flex-direction: row;
-    gap: 5px;
-    padding: 10px;
     align-items: last baseline;
     border: 10px solid var(--secondary-color);
 }
+
 
 .previous-sats {
     display: flex;
@@ -166,7 +166,7 @@ span{
     align-items: flex-end;
     text-align: center;
     justify-content: center;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
 }
 
 #next{
@@ -197,6 +197,7 @@ span{
         height: 200px;
         width: 90%;
         margin-bottom: 10px;
+        /* min-height: 200px; */
     }
     #wpm{
         margin: 0%;
