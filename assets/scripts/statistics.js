@@ -1,4 +1,7 @@
 const stats = JSON.parse(localStorage.getItem("stats"));
+const currentTheme = JSON.parse(localStorage.getItem("theme"));
+
+const root = document.documentElement
 
 const currentMode = document.getElementById("current-mode");
 const wpm = document.getElementById("wpm");
@@ -86,3 +89,6 @@ if (stats) {
 next.addEventListener("click", () => {
     window.location.href = "../pages/test.html";
 });
+
+root.style.setProperty("--primary-color", currentTheme.primaryColor)
+root.style.setProperty("--secondary-color", currentTheme.secondaryColor)

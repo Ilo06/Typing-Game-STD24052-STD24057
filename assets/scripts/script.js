@@ -97,7 +97,7 @@ const startTimer = () => {
     intervalId = setInterval(() => {
         if (time > 0) {
             time--;
-            timerDiv.style.width = `${((time -1)  * 100) / originalTime}%`;
+            timerDiv.style.width = `${((time)  * 100) / originalTime}%`;
             leftTime.textContent = time;
         } else {
             clearInterval(intervalId);
