@@ -422,4 +422,8 @@ label{
         padding-bottom: 200px;
     }
 
+    label .material-symbols-outlined, label .bx{
+        display: none;
+    }
+
 }
