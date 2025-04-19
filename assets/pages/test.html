@@ -11,6 +11,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,8 @@
     <script type="module" src="../scripts/keyboard.js"></script>
     <script type="module" src="../scripts/settings.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard" />
     <link rel="stylesheet" href="../css/keyboard.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/settings.css">
@@ -29,7 +32,7 @@
         <h1>Typing Test</h1>
         <div class="selector">
             <div class="moder">
-                <label id="mode-select" for="mode">Mode</label>
+                <label id="mode-select" for="mode"><i class='bx bx-list-ul' ></i>Mode</label>
                 <select id="mode">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -37,7 +40,9 @@
                 </select>
             </div>
             <div class="words-number moder">
-                <label id="words-number-select" for="num">Words Number</label>
+                <label id="words-number-select" for="num">
+                    <div class="material-symbols-outlined">keyboard</div>Words Number
+                </label>
                 <select id="num">
                     <option value="15">15</option>
                     <option value="30">30</option>
@@ -45,23 +50,24 @@
                 </select>
             </div>
             <div id="timer-select-container" class="timer-select moder">
-                <label for="timer-select">Timer</label>
+                <label for="timer-select"><i class='bx bxs-stopwatch'></i>Timer</label>
                 <select id="timer-select">
                     <option value="15">15s</option>
                     <option value="30">30s</option>
                     <option value="60">60s</option>
                 </select>
             </div>
-            
+
         </div>
-        
+
     </header>
     <main>
         <p id="word-display"></p>
         <div class="timer-container">
             <div id="timer"></div>
         </div>
-        <input type="text" id="input-field" autocomplete="off" spellcheck="false" placeholder="Click Here To Start" autofocus>
+        <input type="text" id="input-field" autocomplete="off" spellcheck="false" placeholder="Click Here To Start"
+            autofocus>
         <div class="stats">
             <div class="block-stat time-stat">
                 <h3>Left Time</h3>
@@ -139,7 +145,7 @@
                         <p>Custom</p>
                     </div>
                 </div>
-                
+
             </div>
             <div class="language">
                 <p>You don't like English ? </p>
@@ -189,7 +195,7 @@
                 </div>
             </div>
             <button type="button" id="apply-button">Apply</button>
-        
+
         </div>
     </main>
     <footer>

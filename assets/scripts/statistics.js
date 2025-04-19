@@ -7,9 +7,8 @@ const accuracy = document.getElementById("accuracy");
 const previousWpm = document.getElementById("previous-wpm");
 const previousAccuracy = document.getElementById("previous-accuracy");
 
-const chart = document.getElementById("graphics")
-
-const next = document.getElementById("next")
+const chart = document.getElementById("graphics");
+const next = document.getElementById("next");
 
 if (stats) {
     currentMode.innerText = `${stats.difficulty} ${stats.timer} ${stats.wordNumbers}`;
@@ -21,7 +20,6 @@ if (stats) {
 
     const wpmHistory = stats.previousWpm;
 
-
     const myChart = echarts.init(chart);
     const option = {
         title: {
@@ -30,7 +28,6 @@ if (stats) {
                 fontFamily: 'monospace',
                 fontWeight: '600',
                 color: '#374151'
-
             }
         },
         tooltip: {
@@ -42,7 +39,7 @@ if (stats) {
             axisLabel: {
                 textStyle: {
                     fontFamily: 'monospace',
-                    color : '#1F2937'
+                    color: '#1F2937'
                 }
             }
         },
@@ -51,39 +48,35 @@ if (stats) {
             axisLabel: {
                 textStyle: {
                     fontFamily: 'monospace',
-                    color : '#1F2937'
+                    color: '#1F2937'
                 }
             }
         },
-
         series: [{
             name: 'WPM',
             type: 'line',
             data: wpmHistory,
-            smooth: true, 
+            smooth: true,
             lineStyle: {
-                color: '#374151', 
+                color: '#374151',
                 width: 3,
             },
             itemStyle: {
-                color: '#1F2937', 
+                color: '#1F2937',
                 borderColor: '#333',
                 borderWidth: 2
             },
             areaStyle: {
-                color: '#374151' 
+                color: '#374151'
             }
         }]
-
     };
 
-    const canvas = document.querySelector("canvas")
-
     myChart.setOption(option);
+
     window.addEventListener('resize', () => {
         myChart.resize();
     });
-
 } else {
     currentMode.innerText = "No data";
     wpm.innerText = "0 WPM";
@@ -91,5 +84,5 @@ if (stats) {
 }
 
 next.addEventListener("click", () => {
-    window.location.href = "../pages/test.html"
-})
+    window.location.href = "../pages/test.html";
+});
