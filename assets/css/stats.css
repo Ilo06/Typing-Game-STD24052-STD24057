@@ -10,8 +10,10 @@ main {
     display: flex;
     flex-direction: row;
     gap: 0px;
+    height: 100%;
+
     /* margin-top: 20vh; */
-    /* align-items: center; */
+    align-items: center;
     /* justify-content: center; */
 
 }
@@ -58,16 +60,14 @@ body {
     background-color: var(--secondary-color);
     color: var(--terty-color);
     border-radius: 10px;
-    width: 50vw;
-    margin-top: 20px;
-    height: auto;
-    display: flex;
+    min-width: 50vw;
+    width: 500px;
+    min-height: 300px;
     flex-direction: row;
-    gap: 5px;
-    padding: 10px;
     align-items: last baseline;
     border: 10px solid var(--secondary-color);
 }
+
 
 .previous-sats {
     display: flex;
@@ -166,19 +166,75 @@ span{
     align-items: flex-end;
     text-align: center;
     justify-content: center;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
 }
 
+#next{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+.bx-right-arrow-alt{
+    font-size: 20px;
+}
 
 
 @media (max-width : 720px) {
     main{
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
+        width: 100%;
+    }
+    h1{
+        margin-left: 20px;
     }
     #graphics{
         height: 200px;
         width: 90%;
+        margin-bottom: 10px;
+        /* min-height: 200px; */
+    }
+    #wpm{
+        margin: 0%;
+        padding: 10px;
+        height: 80px;
+    }
+    #accuracy{
+        margin: 0%;
+        padding: 10px;
+        height: 80px;
+        display: flex;
+        align-items: center; 
+    }
+    .statistics{
+        display: flex;
+        flex-direction: row;
+        width: 95%;
+        gap: 10px;
+    }
+    #current-mode{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #accuracy{
+        padding: 10px;
+    }
+    .previous-stats{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #previous-wpm, #previous-accuracy{
+        height: fit-content;
+        width: 80%;
     }
 }

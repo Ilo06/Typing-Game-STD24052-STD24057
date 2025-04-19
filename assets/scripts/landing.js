@@ -6,6 +6,9 @@ const right = document.getElementById("start-up-images")
 
 const phone = window.matchMedia('(max-width:450px)')
 
+const features =  document.getElementById("features")
+const statistics =  document.getElementById("statistics")
+
 
 button.addEventListener("click", () => {
 
@@ -43,3 +46,19 @@ button.addEventListener("click", () => {
         }, 1450);
     }
 })
+
+
+window.addEventListener('scroll',() => {
+    if (window.scrollY > 100) {
+        features.classList.add("scrolled");
+    } else {
+        features.classList.remove("scrolled");
+    }
+});
+window.addEventListener('scroll',() => {
+    if (window.scrollY > 800) {
+        statistics.classList.add("scrolled");
+    } else {
+        statistics.classList.remove("scrolled");
+    }
+});

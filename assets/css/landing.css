@@ -188,6 +188,143 @@ main {
     }
 }
 
+.features{
+    color: var(--secondary-color) !important;
+    font-family: "0xProto";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    opacity: 0;
+    scale: 0.5;
+    transition: all ease 0.4s;
+    background-image: url(../images/features.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.features-title{
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 5px var(--terty-color);
+
+}
+.features-subtitle{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.features-cards-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card{
+    width: 18vw;
+    border: 1px solid var(--terty-color);
+    padding: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px var(--terty-color);
+    transition: all ease 0.2s;
+    border: 5px solid var(--secondary-color);
+}
+
+
+.card:hover{
+    scale: 1.05;
+    transition: all ease 0.2s;
+}
+
+#card-themes-picture{
+    background-image: url(../images/themes.png);
+    background-position: center;
+    background-size: cover;
+    width: 18vw;
+    height: 18vw;
+}
+#card-language-picture{
+    background-image: url(../images/languages.png);
+    background-position: center;
+    background-size: cover;
+    width: 18vw;
+    height: 18vw;
+}
+#card-font-picture{
+    background-image: url(../images/fonts.png);
+    background-position: center;
+    background-size: cover;
+    width: 18vw;
+    height: 18vw;
+}
+
+#card-theme-text, #card-font-text, #card-language-text{
+    background-color: var(--secondary-color);
+    color: var(--terty-color);
+    margin: 0%;
+    font-family: monospace;
+    padding: 20px;
+    font-weight: 600;
+}
+
+.scrolled{
+    opacity: 1 !important;
+    scale: 1 !important;
+    transition: all ease 0.4s;
+}
+
+#statistics{
+    height: 100vh;
+    background-image: url(../images/statsBackground.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    scale: 0.5;
+    transition: all ease 0.4s;
+}
+
+.stats-image{
+    background-image: url(../images/statistcsIllustration.png);
+    background-position: center;
+    background-size: cover;
+    width: 35vw;
+    height: 40vh;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0px 0px 5px var(--primary-color);
+
+}
+
+.stats-content{
+    color: var(--secondary-color);
+    width: 40vw;
+}
+
+.stats-title{
+    font-family: "0xProto";
+    font-size: 40px;
+    text-shadow: 0px 0px 5px var(--terty-color);
+}
+.stats-text{
+    font-family: monospace;
+}
+
+
+
+
+
 @media (width <= 450px) {
     #start-up-images{
         width: 0;
@@ -218,5 +355,27 @@ main {
         right: -30vw;
         scale: 0.55;
         transition: 1s all ease-in-out ;
+    }
+    .features-cards-container{
+        flex-direction: column;
+        justify-content: space-around;
+        /* gap: 40px; */
+    }
+    .card{
+        width: 80vw;
+    }
+    #card-themes-picture, #card-language-picture, #card-font-picture{
+        width: 100%;
+    }
+
+    #statistics{
+        flex-direction: column-reverse;
+    }
+    .stats-content{
+        width: 90vw;
+    }
+    .stats-image{
+        width: 90vw;
+        height: 20vh;
     }
 }

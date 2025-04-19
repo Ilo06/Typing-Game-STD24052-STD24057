@@ -18,23 +18,77 @@ if (stats) {
 
     previousWpm.innerText = "WPM per Word: " + stats.previousWpm.join(" ");
     previousAccuracy.innerText = "Accuracy per Word: " + stats.previousAccuracy.join(" ");
+
+    const wpmHistory = stats.previousWpm;
+
+
+    const myChart = echarts.init(chart);
+    const option = {
+        title: {
+            text: 'WPM History',
+            textStyle: {
+                fontFamily: 'monospace',
+                fontWeight: '600',
+                color: '#374151'
+
+            }
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            type: 'category',
+            data: wpmHistory.map((_, i) => ` ${i + 1}`),
+            axisLabel: {
+                textStyle: {
+                    fontFamily: 'monospace',
+                    color : '#1F2937'
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                textStyle: {
+                    fontFamily: 'monospace',
+                    color : '#1F2937'
+                }
+            }
+        },
+
+        series: [{
+            name: 'WPM',
+            type: 'line',
+            data: wpmHistory,
+            smooth: true, 
+            lineStyle: {
+                color: '#374151', 
+                width: 3,
+            },
+            itemStyle: {
+                color: '#1F2937', 
+                borderColor: '#333',
+                borderWidth: 2
+            },
+            areaStyle: {
+                color: '#374151' 
+            }
+        }]
+
+    };
+
+    const canvas = document.querySelector("canvas")
+
+    myChart.setOption(option);
+    window.addEventListener('resize', () => {
+        myChart.resize();
+    });
+
 } else {
     currentMode.innerText = "No data";
     wpm.innerText = "0 WPM";
     accuracy.innerText = "0%";
 }
-
-const wpmHistory = stats.previousWpm
-
-wpmHistory.forEach((word) => {
-    const span = document.createElement("span");
-    span.style.width = `${100 / wpmHistory.length}%`
-    span.style.height = `${((word * 100) / (Math.max(...wpmHistory)))}%`
-    span.classList.add("stat-animation")
-    span.style.backgroundColor = "var(--primary-color)"
-    chart.appendChild(span);
-
-});
 
 next.addEventListener("click", () => {
     window.location.href = "../pages/test.html"
