@@ -378,24 +378,6 @@ label{
     gap: 10px;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 25vh;
-    background-color: black;
-    color: var(--secondary-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.footer-block{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-.footer-year{
-    margin: 0;
-    justify-self: center;
-}
 
 @media (max-width : 720px) {
     body{
@@ -439,17 +421,5 @@ footer{
         padding-top: 5px;
         padding-bottom: 200px;
     }
-    footer{
-        position: unset;
-        height: fit-content;
-    }
-    .footer-made-by{
-        width: fit-content;
-        text-align: center;
-    }
-    .footer-block{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+
 }
