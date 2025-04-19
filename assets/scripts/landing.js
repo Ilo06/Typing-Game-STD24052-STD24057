@@ -6,8 +6,8 @@ const right = document.getElementById("start-up-images")
 
 const phone = window.matchMedia('(max-width:450px)')
 
-const features =  document.getElementById("features")
-const statistics =  document.getElementById("statistics")
+const features = document.getElementById("features")
+const statistics = document.getElementById("statistics")
 
 
 button.addEventListener("click", () => {
@@ -17,14 +17,14 @@ button.addEventListener("click", () => {
         right.classList.add("appear")
         setTimeout(() => {
             right.style.opacity = "100%"
-        },1000)
+        }, 1000)
 
         left.classList.add("disapear")
         setTimeout(() => {
             left.style.opacity = "0%"
-        },1000)
+        }, 1000)
 
-        setTimeout(() => {  
+        setTimeout(() => {
             main.classList.add("disapear")
         }, 3500);
 
@@ -37,7 +37,7 @@ button.addEventListener("click", () => {
         left.style.transform = "translateX(50vw)"
         right.style.transform = "translateX(-50vw)"
 
-        setTimeout(() => {  
+        setTimeout(() => {
             main.classList.add("disapear")
         }, 500);
 
@@ -48,17 +48,37 @@ button.addEventListener("click", () => {
 })
 
 
-window.addEventListener('scroll',() => {
+window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         features.classList.add("scrolled");
     } else {
         features.classList.remove("scrolled");
     }
 });
-window.addEventListener('scroll',() => {
+window.addEventListener('scroll', () => {
     if (window.scrollY > 800) {
         statistics.classList.add("scrolled");
     } else {
         statistics.classList.remove("scrolled");
     }
 });
+
+const images = [
+    '../../assets/images/statisticsIllustration2.png',
+    '../../assets/images/statisticsIllustration3.png',
+    '../../assets/images/statisticsIllustration4.png',
+];
+
+let index = 0;
+const image = document.querySelector('.stats-image');
+
+setInterval(() => {
+    image.style.opacity = 0;
+
+    setTimeout(() => {
+        image.style.backgroundImage = `url(${images[index]})`;
+        index = (index + 1) % images.length;
+
+        image.style.opacity = 1;
+    }, 500);
+}, 4000);

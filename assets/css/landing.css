@@ -297,15 +297,16 @@ main {
 }
 
 .stats-image{
-    background-image: url(../images/statistcsIllustration.png);
+    background-image: url(../images/statisticsIllustration.png);
     background-position: center;
     background-size: cover;
     width: 35vw;
     height: 40vh;
     border: 5px solid var(--secondary-color);
     box-shadow: 0px 0px 5px var(--primary-color);
-
+    transition: all ease 0.5s;
 }
+
 
 .stats-content{
     color: var(--secondary-color);
@@ -350,7 +351,7 @@ footer{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: left;
     gap: 10px;
 
     a{
@@ -371,7 +372,7 @@ footer{
 
 
 
-@media (width <= 450px) {
+@media (width <= 750px) {
     #start-up-images{
         width: 0;
         opacity: 0%;
@@ -424,10 +425,22 @@ footer{
         width: 90vw;
         height: 20vh;
     }
+    
+
+}
+
+@media (max-width : 750px) {
+
     footer{
-        position: unset;
         height: fit-content;
+        padding: 10px;
+        width: calc(100vw - 20px);
+
+        h3{
+            justify-self: center;
+        }
     }
+
     .footer-made-by{
         width: fit-content;
         text-align: center;
@@ -435,6 +448,12 @@ footer{
     .footer-block{
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+    }
+
+    .footer-contact, .footer-description, .footer-made-by{
+        width: 100%;
+        text-align: center;
+
     }
 }
