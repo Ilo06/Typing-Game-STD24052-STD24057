@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
 }
 
 h1 {
@@ -348,6 +349,7 @@ main {
     transition: all ease 0.2s;
 }
 
+
 .buttons{
     display: flex;
     flex-direction: row;
@@ -356,10 +358,29 @@ main {
     gap: 10px;
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 25vh;
+    background-color: black;
+    color: var(--secondary-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.footer-year{
+    margin: 0;
+    justify-self: center;
+}
 
 @media (max-width : 720px) {
     body{
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
         display: flex;
         flex-direction: column;
     }
@@ -396,5 +417,19 @@ main {
     main{
         padding: 20px;
         padding-top: 5px;
+        padding-bottom: 200px;
+    }
+    footer{
+        position: unset;
+        height: fit-content;
+    }
+    .footer-made-by{
+        width: fit-content;
+        text-align: center;
+    }
+    .footer-block{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
