@@ -70,7 +70,7 @@
 #french,
 #custom {
     background-color: #374151;
-    color: #C6C8CC;
+    color: var(--secondary-color);
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;

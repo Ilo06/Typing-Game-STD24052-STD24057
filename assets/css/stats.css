@@ -18,6 +18,7 @@ main {
 
 }
 
+
 body {
     background-color: var(--primary-color);
     margin: 0%;
@@ -67,6 +68,8 @@ body {
     align-items: last baseline;
     border: 10px solid var(--secondary-color);
 }
+
+
 
 
 .previous-sats {

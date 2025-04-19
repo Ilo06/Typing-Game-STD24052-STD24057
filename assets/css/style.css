@@ -12,7 +12,7 @@
 body {
     background-color: var(--primary-color);
     height: fit-content;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,6 +87,18 @@ main {
     font-size: 14px;
     text-wrap: nowrap;
 
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+
+    .bx{
+        font-size: 20px;
+    }
 }
 
 .stats p {
@@ -204,6 +216,14 @@ main {
 }
 
 
+/* .cursor {
+    border-left: 2px solid #F94449;
+    animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+} */
 
 
 .correct {
@@ -299,13 +319,13 @@ main {
     transition: all ease 0.2s;
 }
 
-.cursor {
+/* .cursor {
     height: 20px;
     background-color: var(--secondary-color);
     border-radius: 1px;
     width: 2px;
     z-index: 1000;
-}
+} */
 
 
 .timer-container {
